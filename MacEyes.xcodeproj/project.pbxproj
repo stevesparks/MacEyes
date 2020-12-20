@@ -11,6 +11,7 @@
 		0EB1B869258BFC8B004CA437 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1B868258BFC8B004CA437 /* ViewController.swift */; };
 		0EB1B86B258BFC8D004CA437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB1B86A258BFC8D004CA437 /* Assets.xcassets */; };
 		0EB1B86E258BFC8D004CA437 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB1B86C258BFC8D004CA437 /* Main.storyboard */; };
+		0EB1B881258FDDE4004CA437 /* MouseFollowingEyeballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1B880258FDDE4004CA437 /* MouseFollowingEyeballView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		0EB1B86D258BFC8D004CA437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EB1B86F258BFC8D004CA437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB1B870258BFC8D004CA437 /* MacEyes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacEyes.entitlements; sourceTree = "<group>"; };
+		0EB1B880258FDDE4004CA437 /* MouseFollowingEyeballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseFollowingEyeballView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				0EB1B86C258BFC8D004CA437 /* Main.storyboard */,
 				0EB1B86F258BFC8D004CA437 /* Info.plist */,
 				0EB1B870258BFC8D004CA437 /* MacEyes.entitlements */,
+				0EB1B880258FDDE4004CA437 /* MouseFollowingEyeballView.swift */,
 			);
 			path = MacEyes;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			files = (
 				0EB1B869258BFC8B004CA437 /* ViewController.swift in Sources */,
 				0EB1B867258BFC8B004CA437 /* AppDelegate.swift in Sources */,
+				0EB1B881258FDDE4004CA437 /* MouseFollowingEyeballView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
