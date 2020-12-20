@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MacEyes" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,8 +685,8 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="AppWindow" customModule="MacEyes" customModuleProvider="target">
+                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -703,11 +705,44 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="MacEyes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="CZ1-1c-MDZ" customClass="MouseFollowingEyeball" customModule="MacEyes" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="230" height="250"/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="32J-Ul-sxG" customClass="MouseFollowingEyeball" customModule="MacEyes" customModuleProvider="target">
+                                <rect key="frame" x="240" y="10" width="230" height="250"/>
+                            </customView>
+                            <box title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wv4-L1-YxE">
+                                <rect key="frame" x="447" y="-4" width="36" height="36"/>
+                                <view key="contentView" id="TWu-d8-bL6">
+                                    <rect key="frame" x="3" y="3" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CZ1-1c-MDZ" secondAttribute="bottom" constant="10" id="36M-3M-jmV"/>
+                            <constraint firstAttribute="bottom" secondItem="32J-Ul-sxG" secondAttribute="bottom" constant="10" id="7Ha-Mj-Zmx"/>
+                            <constraint firstItem="wv4-L1-YxE" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="0.111111" id="IT7-Pw-pVp"/>
+                            <constraint firstItem="32J-Ul-sxG" firstAttribute="leading" secondItem="CZ1-1c-MDZ" secondAttribute="trailing" id="Iie-X7-7P5"/>
+                            <constraint firstItem="wv4-L1-YxE" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="0.0625" id="JNQ-i4-aUB"/>
+                            <constraint firstItem="32J-Ul-sxG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="NAq-aH-Iei"/>
+                            <constraint firstAttribute="trailing" secondItem="32J-Ul-sxG" secondAttribute="trailing" constant="10" id="Zvd-0U-k93"/>
+                            <constraint firstAttribute="trailing" secondItem="wv4-L1-YxE" secondAttribute="trailing" id="aN4-lt-ycn"/>
+                            <constraint firstAttribute="bottom" secondItem="wv4-L1-YxE" secondAttribute="bottom" id="dKG-Aw-eDU"/>
+                            <constraint firstItem="CZ1-1c-MDZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="e85-jJ-K7E"/>
+                            <constraint firstItem="CZ1-1c-MDZ" firstAttribute="width" secondItem="32J-Ul-sxG" secondAttribute="width" id="oqA-Xd-b29"/>
+                            <constraint firstItem="CZ1-1c-MDZ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="z3N-JH-pVH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="leftEyeball" destination="CZ1-1c-MDZ" id="xXq-W4-wJe"/>
+                        <outlet property="rightEyeball" destination="32J-Ul-sxG" id="ZJ5-iz-5m4"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
